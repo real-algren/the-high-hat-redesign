@@ -3,9 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The High Hat | St. Paul, MN</title>
+    <title>Menus | The High Hat St. Paul</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px 5%;
+        }
+        .menu-card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        .menu-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        .menu-card h3 {
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+        }
+
+        /* Menu Layout Styles */
+        .menu-content-section {
+            padding: 40px 10%;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .menu-category-title {
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+        .item-name {
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+        .item-dots {
+            flex: 1;
+            border-bottom: 1px dotted #ccc;
+            margin: 0 10px;
+        }
+        .item-price {
+            font-weight: 600;
+        }
+        .item-description {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            opacity: 0.8;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,24 +87,52 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="menus.html">Menus</a></li>
+        <li><a href="menus.html" style="color: var(--gold);">Menus</a></li>
     </ul>
     <div class="nav-socials">
         <a href="https://thehighhatmn.square.site/" class="order-btn">Order Online</a>
     </div>
 </nav>
 
-<header style="height: 60vh; background: #333; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <div>
-        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Elevated Comfort</h1>
-        <p>St. Paul, Minnesota</p>
-    </div>
-</header>
+<div style="background: var(--charcoal); color: white; padding: 40px 0; text-align: center;">
+    <h1 style="margin: 0; letter-spacing: 3px;">OUR MENUS</h1>
+    <p style="opacity: 0.8;">Fresh Ingredients, Locally Sourced</p>
+</div>
 
-<main style="padding: 50px 5%;">
-    <h2>Welcome to the Redesign</h2>
-    <p>This is where your Home Page elements will go.</p>
-</main>
+<div class="menu-grid">
+    <a href="#brunch" class="menu-card"><h3>Brunch Menu</h3></a>
+    <a href="#brunch-bev" class="menu-card"><h3>Brunch Beverage</h3></a>
+    <a href="#evening" class="menu-card"><h3>Evening Lounge</h3></a>
+    <a href="#evening-bev" class="menu-card"><h3>Evening Beverage</h3></a>
+</div>
+
+<section id="brunch" class="menu-content-section">
+    <h2 class="menu-category-title">Brunch Menu</h2>
+
+    <div class="menu-item">
+        <span class="item-name">Cornbread Benedict</span>
+        <span class="item-dots"></span>
+        <span class="item-price">$16</span>
+    </div>
+    <span class="item-description">Poached eggs, house-made cornbread, hollandaise sauce.</span>
+
+    <p style="text-align: center;">[Continue transcribing Brunch items here...]</p>
+</section>
+
+<section id="brunch-bev" class="menu-content-section">
+    <h2 class="menu-category-title">Brunch Beverage</h2>
+    <p style="text-align: center;">[Continue transcribing Brunch Beverages here...]</p>
+</section>
+
+<section id="evening" class="menu-content-section">
+    <h2 class="menu-category-title">Evening Lounge</h2>
+    <p style="text-align: center;">[Continue transcribing Evening items here...]</p>
+</section>
+
+<section id="evening-bev" class="menu-content-section">
+    <h2 class="menu-category-title">Evening Beverage</h2>
+    <p style="text-align: center;">[Continue transcribing Evening Beverages here...]</p>
+</section>
 
 <footer>
     <div class="footer-content">
