@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The High Hat | St. Paul, MN</title>
+    <title>About | The High Hat St. Paul</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for the About Page sections */
+        .about-section {
+            padding: 60px 10%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            border-bottom: 1px solid #eee;
+        }
+        .about-section:nth-child(even) {
+            flex-direction: row-reverse;
+            background-color: #fff;
+        }
+        .about-text { flex: 1; }
+        .about-image {
+            flex: 1;
+            background: #e0e0e0;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .about-section { flex-direction: column !important; text-align: center; }
+        }
+    </style>
 </head>
 <body>
 
@@ -15,7 +42,7 @@
     </div>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" style="color: var(--gold);">About</a></li>
         <li><a href="calendar.html">Calendar</a></li>
         <li><a href="menus.html">Menus</a></li>
     </ul>
@@ -24,16 +51,73 @@
     </div>
 </nav>
 
-<header style="height: 60vh; background: #333; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <div>
-        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Elevated Comfort</h1>
-        <p>St. Paul, Minnesota</p>
-    </div>
-</header>
+<div style="background: var(--charcoal); color: white; padding: 40px 0; text-align: center;">
+    <h1 style="margin: 0; letter-spacing: 3px;">OUR STORY</h1>
+</div>
 
-<main style="padding: 50px 5%;">
-    <h2>Welcome to the Redesign</h2>
-    <p>This is where your Home Page elements will go.</p>
+<main>
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Section 1 Title</h2>
+            <p>Welcome to The High Hat, St. Paul's newest culinary gem nestled in the heart of Saint Paul’s Historic Cathedral Hill. Occupying the charming space that once housed Bon Vie Bistro and A Piece of Cake bakery, The High Hat opened its doors in 2023.
+            </p>
+        </div>
+        <div class="about-image">Image Placeholder 1</div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Section 2 Title</h2>
+            <p>At The High Hat, we believe that dining out should be an adventure for your taste buds and a personal and interactive experience for all of our guests. Our menu is a delightful fusion of classic American fare and bold flavors from Southwest and South American cuisines. Our Evening Lounge menu and cocktails offer small and sharable plates and craft cocktails, beer and wine. Every dish and beverage is crafted to surprise, delight, and satisfy our guests while our service is authentic and personal. At the same time, we aim to build relationships with our guests and make them feel at home.
+            </p>
+        </div>
+        <div class="about-image">Image Placeholder 2</div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Section 3 Title</h2>
+            <p>The High Hat is the brainchild of Michael Noyes, a veteran of the Twin Cities restaurant scene. With over two decades of experience, including stints as general manager at the renowned W.A. Frost & Co. and roles at local favorites like Blue Door Pub and former co-owner of Neighborhood Cafe, Michael brings a wealth of culinary knowledge and a passion for hospitality to The High Hat.
+            </p>
+        </div>
+        <div class="about-image">Image Placeholder 3</div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Section 4 Title</h2>
+            <p>Our menu is a testament to creativity and quality. From our blue corn pancakes to our Cornbread Benedict to our legendary caramel and cinnamon rolls – individually baked in cast iron skillets and served piping hot – each dish is thoughtfully prepared using the freshest ingredients. We want your experience to be a decadent one that keeps you coming back for more.
+            </p>
+        </div>
+        <div class="about-image">Image Placeholder 4</div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Section 5 Title</h2>
+            <p>At High Hat, we’re committed to:
+
+                Supporting local suppliers and using seasonal ingredients
+                Providing a warm, welcoming atmosphere for our community
+                Constantly innovating our menu to offer new and exciting flavors
+                Delivering exceptional service that makes every visit fun and memorable
+            </p>
+        </div>
+        <div class="about-image">Image Placeholder 5</div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Section 6 Title</h2>
+            <p>Whether you’re a local resident or just passing through St. Paul, we invite you to join us for an experience like no other. From our cozy, moody interior to our sun-dappled patio, High Hat is the perfect spot to start your day or enjoy a leisurely evening with a creative cocktail and a small bite.
+
+                Come taste the difference at High Hat – where every meal is a celebration of flavor, creativity, and community.
+
+                Thank you for joining us and becoming a part of our community!
+            </p>
+        </div>
+        <div class="about-image">Image Placeholder 6</div>
+    </section>
 </main>
 
 <footer>
@@ -46,7 +130,7 @@
             <h3>Hours</h3>
             <p>8am-2pm Daily  ·  Weds-Sat: 5-11pm  ·  Walk-in only</p>
             <h3>Weekend Brunch</h3>
-            <p>Please limit parties to 6 or under</p>
+            <p>Please limit parties to 6 or under.</p>
         </div>
         <div>
             <h3>Contact</h3>
