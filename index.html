@@ -9,7 +9,8 @@
     <style>
         .hero-section {
             height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/hero-bg.jpg') center/cover;
+            /* Updated to use your logo file from the assets/images folder */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/images/highhat-logo-1600.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -34,6 +35,18 @@
         .btn-gold { background: var(--gold); color: white; }
         .btn-outline { border: 2px solid white; color: white; }
         .btn-main:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        /* Ensures the title remains readable against the logo background */
+        .hero-section h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        }
     </style>
 </head>
 <body>
@@ -52,12 +65,11 @@
 </nav>
 
 <header class="hero-section">
-    <h1 style="font-size: 4rem; margin-bottom: 10px;">THE HIGH HAT</h1>
-    <p style="font-size: 1.2rem; letter-spacing: 2px;">ST. PAUL'S PREMIER JAZZ & COMFORT FOOD</p>
+    <h1>THE HIGH HAT</h1>
+    <p>ST. PAUL'S PREMIER JAZZ & COMFORT FOOD</p>
 
     <div class="hero-buttons">
         <a href="https://the-high-hat.square.site/?owg-fulfillment=pickup&fulfillment=PICKUP&location=11ee9ab554c231b391283cecef6dbab4&location_id=LCAC9ADJ18G5F" class="btn-main btn-gold">Order Online</a>
-
         <a id="dynamic-menu-btn" href="menus.html" class="btn-main btn-outline">View Menu</a>
     </div>
 </header>
@@ -65,13 +77,11 @@
 <script>
     function updateMenuButton() {
         const now = new Date();
-        const day = now.getDay(); // 0 (Sun) to 6 (Sat)
+        const day = now.getDay();
         const hour = now.getHours();
         const btn = document.getElementById('dynamic-menu-btn');
 
-        // Evening Lounge Hours: Wednesday (3) - Saturday (6), 5 PM (17) to 11 PM (23)
         const isEveningHours = (day >= 3 && day <= 6) && (hour >= 17 && hour < 23);
-        // Brunch Hours: 8 AM (8) to 2 PM (14) Daily
         const isBrunchHours = (hour >= 8 && hour < 14);
 
         if (isEveningHours) {
@@ -81,7 +91,6 @@
             btn.innerText = "View Brunch Menu";
             btn.href = "menus.html#brunch";
         } else {
-            // Default if between shifts
             btn.innerText = "View Our Menus";
             btn.href = "menus.html";
         }
