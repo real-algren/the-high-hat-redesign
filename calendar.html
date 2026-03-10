@@ -3,20 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The High Hat | St. Paul, MN</title>
+    <title>Calendar | The High Hat St. Paul</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .event-card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--gold);
+        }
+
+        /* Placeholder styling to prevent IntelliJ errors */
+        .event-image-container {
+            width: 100%;
+            height: 400px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Once you have images, you will use this class instead */
+        .event-poster {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .event-info {
+            padding: 25px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .event-date {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .event-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+        }
+        .event-details {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .details-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: 0.3s;
+            align-self: center;
+        }
+        .details-btn:hover {
+            background: var(--gold);
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">
-        <strong style="letter-spacing: 2px;">THE HIGH HAT</strong>
-    </div>
+    <div class="logo"><strong style="letter-spacing: 2px;">THE HIGH HAT</strong></div>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="calendar.html" style="color: var(--gold);">Calendar</a></li>
         <li><a href="menus.html">Menus</a></li>
     </ul>
     <div class="nav-socials">
@@ -24,34 +113,92 @@
     </div>
 </nav>
 
-<header style="height: 60vh; background: #333; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <div>
-        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Elevated Comfort</h1>
-        <p>St. Paul, Minnesota</p>
-    </div>
-</header>
+<div style="background: var(--charcoal); color: white; padding: 60px 0; text-align: center;">
+    <h1 style="margin: 0; letter-spacing: 4px; text-transform: uppercase;">Upcoming Events</h1>
+    <p style="opacity: 0.8; margin-top: 10px; font-family: 'Raleway', sans-serif;">Live Music & Community Gatherings in St. Paul</p>
+</div>
 
-<main style="padding: 50px 5%;">
-    <h2>Welcome to the Redesign</h2>
-    <p>This is where your Home Page elements will go.</p>
+<main class="calendar-grid">
+
+    <div class="event-card">
+        <div class="event-image-container">Poster Placeholder 1</div>
+        <div class="event-info">
+            <div>
+                <span class="event-date">Date & Time TBD</span>
+                <h3 class="event-name">Event One</h3>
+                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+            </div>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+    </div>
+
+    <div class="event-card">
+        <div class="event-image-container">Poster Placeholder 2</div>
+        <div class="event-info">
+            <div>
+                <span class="event-date">Date & Time TBD</span>
+                <h3 class="event-name">Event Two</h3>
+                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+            </div>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+    </div>
+
+    <div class="event-card">
+        <div class="event-image-container">Poster Placeholder 3</div>
+        <div class="event-info">
+            <div>
+                <span class="event-date">Date & Time TBD</span>
+                <h3 class="event-name">Event Three</h3>
+                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+            </div>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+    </div>
+
+    <div class="event-card">
+        <div class="event-image-container">Poster Placeholder 4</div>
+        <div class="event-info">
+            <div>
+                <span class="event-date">Date & Time TBD</span>
+                <h3 class="event-name">Event Four</h3>
+                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+            </div>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+    </div>
+
+    <div class="event-card">
+        <div class="event-image-container">Poster Placeholder 5</div>
+        <div class="event-info">
+            <div>
+                <span class="event-date">Date & Time TBD</span>
+                <h3 class="event-name">Event Five</h3>
+                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+            </div>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+    </div>
+
+    <div class="event-card">
+        <div class="event-image-container">Poster Placeholder 6</div>
+        <div class="event-info">
+            <div>
+                <span class="event-date">Date & Time TBD</span>
+                <h3 class="event-name">Event Six</h3>
+                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+            </div>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+    </div>
+
 </main>
 
 <footer>
     <div class="footer-content">
-        <div>
-            <h3>Location</h3>
-            <p>485 Selby Avenue · Cathedral Hill · St. Paul, MN</p>
-        </div>
-        <div>
-            <h3>Hours</h3>
-            <p>8am-2pm Daily  ·  Weds-Sat: 5-11pm  ·  Walk-in only</p>
-            <h3>Weekend Brunch</h3>
-            <p>Please limit parties to 6 or under</p>
-        </div>
-        <div>
-            <h3>Contact</h3>
-            <p>651-528-7941</p>
-        </div>
+        <div><h3>Location</h3><p>Address Placeholder</p></div>
+        <div><h3>Hours</h3><p>Schedule Placeholder</p></div>
+        <div><h3>Contact</h3><p>Phone/Email Placeholder</p></div>
     </div>
     <div class="footer-bottom">
         <p>&copy; 2024 The High Hat. All Rights Reserved. | Site by [Your Name]</p>
