@@ -3,79 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The High Hat | St. Paul, MN</title>
+    <title>Menus | The High Hat St. Paul</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Header / Nav Adjustments */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 5%;
-            background-color: white;
-            border-bottom: 1px solid #eee;
-        }
-
-        .logo-container {
-            flex: 1;
-        }
-
-        .logo-img {
-            height: 60px; /* Adjust this to make the logo larger or smaller in the bar */
-            width: auto;
-            display: block;
-        }
-
-        .nav-links {
-            flex: 2;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-socials {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        /* Hero Section - Now clean and focused on the buttons */
-        .hero-section {
-            height: 60vh;
-            background: #1a1a1a; /* Dark sophisticated background */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-buttons {
-            display: flex;
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-top: 30px;
+            padding: 40px 5%;
         }
-
-        .btn-main {
-            padding: 15px 30px;
+        .menu-card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            padding: 30px;
+            text-align: center;
             text-decoration: none;
-            font-weight: 600;
+            color: var(--charcoal);
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        .menu-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        .menu-card h3 {
+            margin: 0;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 4px;
-            transition: 0.3s;
+            font-size: 1rem;
         }
-
-        .btn-gold { background: var(--gold); color: white; }
-        .btn-outline { border: 2px solid white; color: white; }
-        .btn-main:hover { transform: translateY(-3px); opacity: 0.9; }
-
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 15px; }
-            .logo-img { height: 50px; }
+        .menu-content-section {
+            padding: 60px 10%;
+            max-width: 1000px;
+            margin: auto;
+            scroll-margin-top: 100px; /* Offset for sticky nav */
+        }
+        .menu-category-title {
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+        }
+        .sub-category {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            color: var(--gold);
+            text-align: center;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .item-name {
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+        .item-dots {
+            flex: 1;
+            border-bottom: 1px dotted #ccc;
+            margin: 0 10px;
+        }
+        .item-price { font-weight: 600; }
+        .item-description {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            display: block;
+        }
+        .surcharge-note {
+            background: #eee;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 40px;
+            border-radius: 4px;
+        }
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: var(--gold);
+            text-transform: uppercase;
         }
     </style>
 </head>
