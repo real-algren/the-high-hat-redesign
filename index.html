@@ -7,10 +7,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Header / Nav Adjustments */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo-container {
+            flex: 1;
+        }
+
+        .logo-img {
+            height: 60px; /* Adjust this to make the logo larger or smaller in the bar */
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-socials {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Hero Section - Now clean and focused on the buttons */
         .hero-section {
-            height: 80vh;
-            /* Updated to use your logo file from the assets/images folder */
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/images/highhat-logo-1600.jpg') center/cover no-repeat;
+            height: 60vh;
+            background: #1a1a1a; /* Dark sophisticated background */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -18,11 +52,13 @@
             color: white;
             text-align: center;
         }
+
         .hero-buttons {
             display: flex;
             gap: 20px;
             margin-top: 30px;
         }
+
         .btn-main {
             padding: 15px 30px;
             text-decoration: none;
@@ -32,27 +68,25 @@
             border-radius: 4px;
             transition: 0.3s;
         }
+
         .btn-gold { background: var(--gold); color: white; }
         .btn-outline { border: 2px solid white; color: white; }
         .btn-main:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        /* Ensures the title remains readable against the logo background */
-        .hero-section h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
-        .hero-section p {
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .logo-img { height: 50px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo"><strong style="letter-spacing: 2px;">THE HIGH HAT</strong></div>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="assets/images/highhat-logo-1600.jpg" alt="The High Hat Logo" class="logo-img">
+        </a>
+    </div>
     <ul class="nav-links">
         <li><a href="index.html" style="color: var(--gold);">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -65,8 +99,8 @@
 </nav>
 
 <header class="hero-section">
-    <h1>THE HIGH HAT</h1>
-    <p>ST. PAUL'S PREMIER JAZZ & COMFORT FOOD</p>
+    <h1 style="font-size: 3.5rem; margin-bottom: 10px;">THE HIGH HAT</h1>
+    <p style="font-size: 1.1rem; letter-spacing: 3px; color: var(--gold);">ELEVATED COMFORT FOOD & JAZZ</p>
 
     <div class="hero-buttons">
         <a href="https://the-high-hat.square.site/?owg-fulfillment=pickup&fulfillment=PICKUP&location=11ee9ab554c231b391283cecef6dbab4&location_id=LCAC9ADJ18G5F" class="btn-main btn-gold">Order Online</a>
