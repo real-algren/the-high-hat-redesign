@@ -34,26 +34,33 @@
             letter-spacing: 1px;
             font-size: 1rem;
         }
-
-        /* Menu Layout Styles */
         .menu-content-section {
-            padding: 40px 10%;
+            padding: 60px 10%;
             max-width: 1000px;
             margin: auto;
+            scroll-margin-top: 100px; /* Offset for sticky nav */
         }
         .menu-category-title {
             text-align: center;
             border-bottom: 2px solid var(--gold);
-            margin-bottom: 40px;
+            margin: 40px 0 20px;
             padding-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: var(--charcoal);
+        }
+        .sub-category {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            color: var(--gold);
+            text-align: center;
         }
         .menu-item {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .item-name {
             font-weight: 600;
@@ -65,24 +72,37 @@
             border-bottom: 1px dotted #ccc;
             margin: 0 10px;
         }
-        .item-price {
-            font-weight: 600;
-        }
+        .item-price { font-weight: 600; }
         .item-description {
             font-size: 0.9rem;
             font-style: italic;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             opacity: 0.8;
             display: block;
+        }
+        .surcharge-note {
+            background: #eee;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 40px;
+            border-radius: 4px;
+        }
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: var(--gold);
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">
-        <strong style="letter-spacing: 2px;">THE HIGH HAT</strong>
-    </div>
+    <div class="logo"><strong style="letter-spacing: 2px;">THE HIGH HAT</strong></div>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -109,47 +129,206 @@
 <section id="brunch" class="menu-content-section">
     <h2 class="menu-category-title">Brunch Menu</h2>
 
-    <div class="menu-item">
-        <span class="item-name">Cornbread Benedict</span>
-        <span class="item-dots"></span>
-        <span class="item-price">$16</span>
-    </div>
-    <span class="item-description">Poached eggs, house-made cornbread, hollandaise sauce.</span>
+    <div class="menu-item"><span class="item-name">Skilled-Baked Caramel-Pecan Roll</span><span class="item-dots"></span><span class="item-price">9.5</span></div>
+    <div class="menu-item"><span class="item-name">Skilled-Baked Cinnamon Roll</span><span class="item-dots"></span><span class="item-price">9.5</span></div>
 
-    <p style="text-align: center;">[Continue transcribing Brunch items here...]</p>
+    <div class="menu-item"><span class="item-name">AlohA Parfait</span><span class="item-dots"></span><span class="item-price">15</span></div>
+    <span class="item-description">Papaya, Greek Yogurt, Honey Granola, Strawberries, Pineapple, Blueberries, Kiwi, Honey | GF/V</span>
+
+    <div class="menu-item"><span class="item-name">Eggs “Blackstone” Benedict*</span><span class="item-dots"></span><span class="item-price">17</span></div>
+    <span class="item-description">Thyme-roasted Roma Tomato, Applewood Bacon, Poached Egg, Hollandaise, Black Pepper, English Muffin. Has browns or Greens</span>
+
+    <div class="menu-item"><span class="item-name">Cornbread Benedict*</span><span class="item-dots"></span><span class="item-price">17</span></div>
+    <span class="item-description">Sweet Corn bread, Chorizo, Poached Egg, Hollandaise, Pico de Gallo, Has browns or Greens, Fried Plantains</span>
+
+    <div class="menu-item"><span class="item-name">Huevos Divorciados*</span><span class="item-dots"></span><span class="item-price">16</span></div>
+    <span class="item-description">Corn Tortilla, Black Beans, Over Medium Eggs, Salsa Roja, Salsa Verde, Pico de Gallo, Queso Fresco, Hash browns or Greens, Fried Plantains | Add Chorizo or Beyond Italian Sausage +4 | GF</span>
+
+    <div class="menu-item"><span class="item-name">Blue Corn Pancakes</span><span class="item-dots"></span><span class="item-price">16</span></div>
+    <span class="item-description">Fried Plantains, Coconut Whip, Pure Maple Syrup | GF</span>
+
+    <div class="menu-item"><span class="item-name">High Hat Hash*</span><span class="item-dots"></span><span class="item-price">17</span></div>
+    <span class="item-description">Diced Potato, Andouille Sausage, Red Pepper, Onion, Mushroom, Fresno, Eggs, Hollandaise, Cayenne | (GF Without Toast) | Whole Grain, Sour Dough, or English Muffin</span>
+
+    <div class="menu-item"><span class="item-name">Migas*</span><span class="item-dots"></span><span class="item-price">16</span></div>
+    <span class="item-description">Scrambled Eggs, Chorizo, Pico de Gallo, Tortilla Chips, White Cheddar | Served with Black Beans, Silver Dollar Blue Cornmeal Pancakes, Honey Butter | GF</span>
+
+    <div class="menu-item"><span class="item-name">Avocado Toast*</span><span class="item-dots"></span><span class="item-price">16</span></div>
+    <span class="item-description">Challah, Mixed Greens, Cilantro-lime Dressing, Poached eggs, Goat Cheese | Served with Hash Browns</span>
+
+    <div class="menu-item"><span class="item-name">Breakfast Bowl*</span><span class="item-dots"></span><span class="item-price">15.5</span></div>
+    <span class="item-description">Wild Rice, Sweet Potato, Mushroom, Onion, Red Pepper, Avocado, Eggs, Cilantro-Lime Dressing | (GF Without Toast) | Whole Grain, Sourdough, Or English Muffin | Add Chorizo or Beyond Italian Sausage +4</span>
+
+    <div class="menu-item"><span class="item-name">Buttermilk Biscuits And Rosemary Gravy*</span><span class="item-dots"></span><span class="item-price">15.5</span></div>
+    <span class="item-description">2 Eggs, Hash browns or Greens | Add Chorizo or Beyond Italian Sausage +4</span>
+
+    <div class="menu-item"><span class="item-name">Croissant Sandwich*</span><span class="item-dots"></span><span class="item-price">16.5</span></div>
+    <span class="item-description">Egg, Smoked Gouda, Bacon Jam, Tomato, Arugula, Hash browns or Greens</span>
+
+    <div class="menu-item"><span class="item-name">Omelet*</span><span class="item-dots"></span><span class="item-price">17</span></div>
+    <span class="item-description">Hash browns or Greens | (GF Without Toast) | Whole Grain, Sourdough, or English Muffin</span>
+
+    <div class="menu-item"><span class="item-name">Overnight Steel Cut Oatmeal</span><span class="item-dots"></span><span class="item-price">13.5</span></div>
+    <span class="item-description">Chia Seeds, Flax Seeds, Oat Milk, Blueberries, Pure Maple Syrup</span>
+
+    <div class="menu-item"><span class="item-name">French Toast</span><span class="item-dots"></span><span class="item-price">15</span></div>
+    <span class="item-description">Challah, Whipped Butter, Pure Maple Syrup</span>
+
+    <div class="menu-item"><span class="item-name">Three Buttermilk Pancakes</span><span class="item-dots"></span><span class="item-price">15</span></div>
+    <div class="menu-item"><span class="item-name">Two Buttermilk Pancakes</span><span class="item-dots"></span><span class="item-price">12</span></div>
+    <span class="item-description">Whipped Butter, Pure Maple Syrup</span>
+
+    <div class="menu-item"><span class="item-name">Classic Breakfast #1*</span><span class="item-dots"></span><span class="item-price">17</span></div>
+    <span class="item-description">2 Eggs, Hash browns, Bacon or Sausage, Toast | (GF Without Toast)</span>
+
+    <div class="menu-item"><span class="item-name">Classic Breakfast #2*</span><span class="item-dots"></span><span class="item-price">17</span></div>
+    <span class="item-description">2 Eggs, Bacon or Sausage, Buttermilk Pancakes or French Toast, real maple syrup</span>
+
+    <h3 class="sub-category">Sides</h3>
+    <div class="menu-item"><span class="item-name">Hash Browns</span><span class="item-dots"></span><span class="item-price">6</span></div>
+    <div class="menu-item"><span class="item-name">Toast</span><span class="item-dots"></span><span class="item-price">5</span></div>
+    <div class="menu-item"><span class="item-name">One Egg*</span><span class="item-dots"></span><span class="item-price">3.75</span></div>
+    <div class="menu-item"><span class="item-name">One Pancake</span><span class="item-dots"></span><span class="item-price">6</span></div>
+    <div class="menu-item"><span class="item-name">One French Toast</span><span class="item-dots"></span><span class="item-price">5</span></div>
+    <div class="menu-item"><span class="item-name">Pure Maple Syrup</span><span class="item-dots"></span><span class="item-price">2</span></div>
+    <div class="menu-item"><span class="item-name">Bacon</span><span class="item-dots"></span><span class="item-price">5</span></div>
+    <div class="menu-item"><span class="item-name">Sausage</span><span class="item-dots"></span><span class="item-price">5</span></div>
+    <div class="menu-item"><span class="item-name">Andouille</span><span class="item-dots"></span><span class="item-price">6</span></div>
+    <div class="menu-item"><span class="item-name">Turkey Sausage</span><span class="item-dots"></span><span class="item-price">6</span></div>
+    <div class="menu-item"><span class="item-name">Beyond Italian Sausage</span><span class="item-dots"></span><span class="item-price">6</span></div>
+    <div class="menu-item"><span class="item-name">Hollandaise / Salsa</span><span class="item-dots"></span><span class="item-price">2</span></div>
+    <div class="menu-item"><span class="item-name">Pico De Gallo / Avocado</span><span class="item-dots"></span><span class="item-price">3</span></div>
+    <div class="menu-item"><span class="item-name">Fruit</span><span class="item-dots"></span><span class="item-price">5.5</span></div>
+    <div class="menu-item"><span class="item-name">Greens</span><span class="item-dots"></span><span class="item-price">5</span></div>
+
+    <p style="font-size: 0.8rem; margin-top: 20px;">* These items may be served raw or undercooked. Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness.</p>
+    <a href="#" class="back-to-top">↑ Back to Top</a>
 </section>
 
 <section id="brunch-bev" class="menu-content-section">
     <h2 class="menu-category-title">Brunch Beverage</h2>
-    <p style="text-align: center;">[Continue transcribing Brunch Beverages here...]</p>
+    <h3 class="sub-category">Specialty Coffee (8)</h3>
+    <p style="text-align: center; font-style: italic; margin-bottom: 20px;">Served hot or iced | Choice of Whole, Oat, or Almond Milk</p>
+
+    <div class="menu-item"><span class="item-name">Lavender Haze</span></div><span class="item-description">Espresso, Lavender, White Chocolate</span>
+    <div class="menu-item"><span class="item-name">Muse</span></div><span class="item-description">Espresso, orange, caramel, cinnamon</span>
+    <div class="menu-item"><span class="item-name">Dubai Chocolate Latte</span></div><span class="item-description">Espresso, Dark Chocolate, Pistachio, Kataifi</span>
+    <div class="menu-item"><span class="item-name">Funky Monkey</span></div><span class="item-description">Espresso, caramel, banana</span>
+    <div class="menu-item"><span class="item-name">The Hulk</span></div><span class="item-description">Matcha, pistachio</span>
+    <div class="menu-item"><span class="item-name">Caramel Apple Cider</span></div><span class="item-description">Local Cider, caramel cold foam (add a shot of whiskey for $5)</span>
+    <div class="menu-item"><span class="item-name">Campfire Mocha</span></div><span class="item-description">Espresso, dark chocolate, toasted marshmallow cold foam, graham cracker crumb</span>
+    <div class="menu-item"><span class="item-name">Oatmeal Cookie Latte</span></div><span class="item-description">Espresso, Homemade Brown Sugar Simple, Oat Milk</span>
+
+    <h3 class="sub-category">Standard Beverages</h3>
+    <div class="menu-item"><span class="item-name">Coffee (Peace Coffee)</span><span class="item-dots"></span><span class="item-price">5</span></div>
+    <div class="menu-item"><span class="item-name">Pure Orange / Pineapple Juice</span><span class="item-dots"></span><span class="item-price">6</span></div>
+    <div class="menu-item"><span class="item-name">Lemonade (Blueberry, guava, peach +1)</span><span class="item-dots"></span><span class="item-price">6</span></div>
+    <div class="menu-item"><span class="item-name">Iced tea (Peach +1)</span><span class="item-dots"></span><span class="item-price">4</span></div>
+    <div class="menu-item"><span class="item-name">Soda (Coke, Diet Coke, Sprite)</span><span class="item-dots"></span><span class="item-price">3</span></div>
+
+    <h3 class="sub-category">Martinis & Cocktails</h3>
+    <div class="menu-item"><span class="item-name">Matchatini</span><span class="item-dots"></span><span class="item-price">12.5</span></div>
+    <div class="menu-item"><span class="item-name">A-muse</span><span class="item-dots"></span><span class="item-price">12</span></div>
+    <div class="menu-item"><span class="item-name">OG Espresso</span><span class="item-dots"></span><span class="item-price">11</span></div>
+    <div class="menu-item"><span class="item-name">Maple Old Fashioned</span><span class="item-dots"></span><span class="item-price">13</span></div>
+    <div class="menu-item"><span class="item-name">French Kiss / Pom Paloma</span><span class="item-dots"></span><span class="item-price">11-12</span></div>
+    <div class="menu-item"><span class="item-name">Bloody Mary</span><span class="item-dots"></span><span class="item-price">10</span></div>
+
+    <h3 class="sub-category">Fresh Juice Mimosas (9-10)</h3>
+    <p style="text-align: center;">Classic Orange, Pineapple, Apple Cider, Passion Fruit, Mango, Peach</p>
+    <a href="#" class="back-to-top">↑ Back to Top</a>
 </section>
 
 <section id="evening" class="menu-content-section">
     <h2 class="menu-category-title">Evening Lounge</h2>
-    <p style="text-align: center;">[Continue transcribing Evening items here...]</p>
+
+    <div class="menu-item"><span class="item-name">House Salad</span><span class="item-dots"></span><span class="item-price">9</span></div>
+    <span class="item-description">Mixed Greens, Red Onion, Grape Tomato, Goat Cheese, Cilantro-Lime Hummus Dressing | Add Chicken +5</span>
+
+    <div class="menu-item"><span class="item-name">Grilled Papaya Salad</span><span class="item-dots"></span><span class="item-price">12</span></div>
+    <span class="item-description">Mixed Greens, Strawberry, Toasted Pecan, Goat Cheese, Grapefruit-Orange Citrus Vinaigrette | Add Chicken +5</span>
+
+    <div class="menu-item"><span class="item-name">Sweet Potato Hummus</span><span class="item-dots"></span><span class="item-price">10</span></div>
+    <span class="item-description">Garnished with Pomegranate Seeds and Fried Sage | Served with Pita Bread</span>
+
+    <div class="menu-item"><span class="item-name">Wontons</span><span class="item-dots"></span><span class="item-price">10</span></div>
+    <span class="item-description">Fresno, Cream Cheese, Sweet Chili Sauce, Lime</span>
+
+    <div class="menu-item"><span class="item-name">Street Carrots</span><span class="item-dots"></span><span class="item-price">12</span></div>
+    <span class="item-description">Jalapeno, Lime-Cilantro Aioli, Queso Fresco, Cilantro</span>
+
+    <div class="menu-item"><span class="item-name">Chorizo Meatballs</span><span class="item-dots"></span><span class="item-price">16</span></div>
+    <span class="item-description">Plantain Mashed Potatoes, Jalapeño Ketchup</span>
+
+    <div class="menu-item"><span class="item-name">Nachos</span><span class="item-dots"></span><span class="item-price">12</span></div>
+    <span class="item-description">Corn Tortilla Chips, Pepper Jack Queso, Pico De Gallo, Choice of Chorizo, Grilled Chicken, or Carnitas</span>
+
+    <h3 class="sub-category">Burgers & Sandwiches</h3>
+    <p style="text-align: center; font-style: italic; margin-bottom: 20px;">Served with Fries or Greens</p>
+
+    <div class="menu-item"><span class="item-name">Cheeseburger</span><span class="item-dots"></span><span class="item-price">14</span></div>
+    <span class="item-description">2 Beef Patties, American Cheese, Lettuce, Tomato, Onion, Mayo, Sesame Brioche Bun</span>
+
+    <div class="menu-item"><span class="item-name">Burger Con Queso</span><span class="item-dots"></span><span class="item-price">16</span></div>
+    <span class="item-description">2 Beef Patties, Pepper Jack Queso, Fried Onions, Jalapeño, Pickle Chips, Sesame Seed Brioche Bun</span>
+
+    <div class="menu-item"><span class="item-name">Patty Melt</span><span class="item-dots"></span><span class="item-price">14</span></div>
+    <span class="item-description">2 Beef Patties, Provolone, Caramelized Onions, 1000 Island, Grilled Rye</span>
+
+    <div class="menu-item"><span class="item-name">Grilled Cheese & Red Pepper-Tomato Soup</span><span class="item-dots"></span><span class="item-price">14</span></div>
+    <span class="item-description">Extra Sharp Cheddar, Grilled Sourdough</span>
+
+    <div class="menu-item"><span class="item-name">Chicken Sandwich</span><span class="item-dots"></span><span class="item-price">16</span></div>
+    <span class="item-description">Cajun-Seasoned Chicken Breast, Smoked Gouda, Bacon, Hot Honey-Mustard Mayo, Pickled Onion, Mixed Greens, Roma Tomato, Ciabatta</span>
+
+    <div class="menu-item"><span class="item-name">Rueben / French Dip</span><span class="item-dots"></span><span class="item-price">16</span></div>
+    <span class="item-description">Classic Corned Beef or Slow-cooked Pot Roast on Marble Rye or Ciabatta</span>
+
+    <div class="menu-item"><span class="item-name">Carnitas Divorciados / Ahi Tuna Tacos</span><span class="item-dots"></span><span class="item-price">15</span></div>
+
+    <h3 class="sub-category">Entrees</h3>
+    <div class="menu-item"><span class="item-name">Chili Con Carne</span><span class="item-dots"></span><span class="item-price">12</span></div>
+    <div class="menu-item"><span class="item-name">Skilled-Baked Mac and Cheese</span><span class="item-dots"></span><span class="item-price">14</span></div>
+    <div class="menu-item"><span class="item-name">Skilled-Baked Gnocchi</span><span class="item-dots"></span><span class="item-price">15</span></div>
+    <div class="menu-item"><span class="item-name">Skilled-Baked Pot Pie</span><span class="item-dots"></span><span class="item-price">16</span></div>
+
+    <p style="font-size: 0.8rem; margin-top: 20px;">* Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness</p>
+    <a href="#" class="back-to-top">↑ Back to Top</a>
 </section>
 
 <section id="evening-bev" class="menu-content-section">
     <h2 class="menu-category-title">Evening Beverage</h2>
-    <p style="text-align: center;">[Continue transcribing Evening Beverages here...]</p>
+
+    <h3 class="sub-category">Specialty Cocktails</h3>
+    <div class="menu-item"><span class="item-name">Mezcal Negroni / Carajillo</span><span class="item-dots"></span><span class="item-price">14</span></div>
+    <div class="menu-item"><span class="item-name">Bee Sting / Spiced Orange Martini</span><span class="item-dots"></span><span class="item-price">13</span></div>
+    <div class="menu-item"><span class="item-name">French Kiss / Caipirinha / Mule / Spritz / Mulled Wine</span><span class="item-dots"></span><span class="item-price">12</span></div>
+
+    <h3 class="sub-category">House Cocktails</h3>
+    <div class="menu-item"><span class="item-name">Old Fashioned</span><span class="item-dots"></span><span class="item-price">14</span></div>
+    <div class="menu-item"><span class="item-name">Manhattan / House Margarita</span><span class="item-dots"></span><span class="item-price">13</span></div>
+    <div class="menu-item"><span class="item-name">Gimlet</span><span class="item-dots"></span><span class="item-price">12</span></div>
+
+    <h3 class="sub-category">Spiritless (9-11)</h3>
+    <p style="text-align: center;">Pineapple Express, Nojito, Mango Tree, Heatwave, Perfect Pear</p>
+
+    <h3 class="sub-category">Wine & Beer</h3>
+    <p style="text-align: center;">Reds, Whites, Rose, and Zero-Proof Wine (8-13)</p>
+    <p style="text-align: center;">Summit Selection: EPA, Saga IPA, Lager, Seasonal, Nialas (8)</p>
+    <a href="#" class="back-to-top">↑ Back to Top</a>
+</section>
+
+<section class="menu-content-section">
+    <div class="surcharge-note">
+        <p><strong>Note:</strong> When paying by credit card, The High Hat adds a 3% surcharge to help offset processing costs. This amount does not exceed what we pay in fees. Debit cards and cash payments do not apply. We welcome and encourage cash payments and gratuities.</p>
+    </div>
 </section>
 
 <footer>
     <div class="footer-content">
-        <div>
-            <h3>Location</h3>
-            <p>485 Selby Avenue · Cathedral Hill · St. Paul, MN</p>
-        </div>
-        <div>
-            <h3>Hours</h3>
-            <p>8am-2pm Daily  ·  Weds-Sat: 5-11pm  ·  Walk-in only</p>
-            <h3>Weekend Brunch</h3>
-            <p>Please limit parties to 6 or under</p>
-        </div>
-        <div>
-            <h3>Contact</h3>
-            <p>651-528-7941</p>
-        </div>
+        <div><h3>Location</h3><p>PASTE ADDRESS HERE</p></div>
+        <div><h3>Hours</h3><p>PASTE SCHEDULE HERE</p></div>
+        <div><h3>Contact</h3><p>PASTE PHONE/EMAIL HERE</p></div>
     </div>
     <div class="footer-bottom">
         <p>&copy; 2024 The High Hat. All Rights Reserved. | Site by [Your Name]</p>
