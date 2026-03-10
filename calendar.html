@@ -7,95 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 40px 5%;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .event-card {
-            background: var(--white);
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-            border-color: var(--gold);
-        }
-
-        /* Placeholder styling to prevent IntelliJ errors */
-        .event-image-container {
-            width: 100%;
-            height: 400px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Once you have images, you will use this class instead */
-        .event-poster {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .event-info {
-            padding: 25px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .event-date {
-            color: var(--gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            display: block;
-        }
-        .event-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            margin: 0 0 10px 0;
-        }
-        .event-details {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        .details-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: 0.3s;
-            align-self: center;
-        }
-        .details-btn:hover {
-            background: var(--gold);
-            color: white;
-        }
+        .calendar-container { padding: 40px 5%; max-width: 1200px; margin: auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; border-bottom: 2px solid #c5a059; margin-bottom: 30px; padding-bottom: 10px; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .event-card { background: #ffffff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
+        .past-event { opacity: 0.7; filter: grayscale(50%); }
+        .event-image-container { width: 100%; height: 300px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #777; font-weight: 600; text-align: center; padding: 20px; }
+        .event-info { padding: 20px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
+        .event-date-display { color: #c5a059; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; display: block; }
+        .event-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 10px 0; }
+        .event-details { font-size: 0.9rem; line-height: 1.5; color: #555; margin-bottom: 15px; flex-grow: 1; }
+        #previous-events-wrapper { display: none; margin-top: 20px; }
+        .toggle-btn { background: none; border: 2px solid #1a1a1a; padding: 10px 25px; cursor: pointer; font-weight: 600; text-transform: uppercase; transition: 0.3s; margin-bottom: 40px; }
+        .toggle-btn:hover { background: #1a1a1a; color: white; }
+        .details-btn { display: inline-block; padding: 8px 15px; border: 1px solid #c5a059; color: #c5a059; text-decoration: none; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -105,7 +30,7 @@
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="calendar.html" style="color: var(--gold);">Calendar</a></li>
+        <li><a href="calendar.html" style="color: #c5a059;">Calendar</a></li>
         <li><a href="menus.html">Menus</a></li>
     </ul>
     <div class="nav-socials">
@@ -113,97 +38,120 @@
     </div>
 </nav>
 
-<div style="background: var(--charcoal); color: white; padding: 60px 0; text-align: center;">
-    <h1 style="margin: 0; letter-spacing: 4px; text-transform: uppercase;">Upcoming Events</h1>
-    <p style="opacity: 0.8; margin-top: 10px; font-family: 'Raleway', sans-serif;">Live Music & Community Gatherings in St. Paul</p>
+<div style="background: #1a1a1a; color: white; padding: 60px 0; text-align: center;">
+    <h1 style="letter-spacing: 3px;">UPCOMING EVENTS</h1>
 </div>
 
-<main class="calendar-grid">
+<main class="calendar-container">
+    <h2 class="section-title">Upcoming Events</h2>
+    <div id="upcoming-grid" class="calendar-grid"></div>
 
-    <div class="event-card">
-        <div class="event-image-container">Poster Placeholder 1</div>
-        <div class="event-info">
-            <div>
-                <span class="event-date">Date & Time TBD</span>
-                <h3 class="event-name">Event One</h3>
-                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
-            </div>
-            <a href="#" class="details-btn">View Details</a>
-        </div>
+    <div style="text-align: center; margin-top: 40px;">
+        <button class="toggle-btn" onclick="togglePastEvents()">View Previous Events</button>
     </div>
 
-    <div class="event-card">
-        <div class="event-image-container">Poster Placeholder 2</div>
-        <div class="event-info">
-            <div>
-                <span class="event-date">Date & Time TBD</span>
-                <h3 class="event-name">Event Two</h3>
-                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
-            </div>
-            <a href="#" class="details-btn">View Details</a>
-        </div>
+    <div id="previous-events-wrapper">
+        <h2 class="section-title">Past Events</h2>
+        <div id="previous-grid" class="calendar-grid"></div>
     </div>
 
-    <div class="event-card">
-        <div class="event-image-container">Poster Placeholder 3</div>
-        <div class="event-info">
-            <div>
-                <span class="event-date">Date & Time TBD</span>
-                <h3 class="event-name">Event Three</h3>
-                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
-            </div>
-            <a href="#" class="details-btn">View Details</a>
-        </div>
-    </div>
+    <div id="master-event-list" style="display: none;">
 
-    <div class="event-card">
-        <div class="event-image-container">Poster Placeholder 4</div>
-        <div class="event-info">
-            <div>
-                <span class="event-date">Date & Time TBD</span>
-                <h3 class="event-name">Event Four</h3>
-                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+        <div class="event-card" data-date="2026-03-05">
+            <div class="event-image-container">Poster: Dean Magraw, Gary Raynor, Jay Epstein</div>
+            <div class="event-info">
+                <span class="event-date-display">Thursday, March 5th</span>
+                <h3 class="event-name">Dean Magraw, Gary Raynor, and Jay Epstein</h3>
+                <p class="event-details">$10 cover or a 2 drink minimum per person</p>
             </div>
-            <a href="#" class="details-btn">View Details</a>
         </div>
-    </div>
 
-    <div class="event-card">
-        <div class="event-image-container">Poster Placeholder 5</div>
-        <div class="event-info">
-            <div>
-                <span class="event-date">Date & Time TBD</span>
-                <h3 class="event-name">Event Five</h3>
-                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+        <div class="event-card" data-date="2026-03-06">
+            <div class="event-image-container">Poster: Zacc Harris Trio</div>
+            <div class="event-info">
+                <span class="event-date-display">Friday, March 6th @ 7PM</span>
+                <h3 class="event-name">The Zacc Harris Trio</h3>
+                <p class="event-details">$10 cover or a 2 drink minimum per person</p>
             </div>
-            <a href="#" class="details-btn">View Details</a>
         </div>
-    </div>
 
-    <div class="event-card">
-        <div class="event-image-container">Poster Placeholder 6</div>
-        <div class="event-info">
-            <div>
-                <span class="event-date">Date & Time TBD</span>
-                <h3 class="event-name">Event Six</h3>
-                <p class="event-details">Specific notes and event description will go here once transcribed.</p>
+        <div class="event-card" data-date="2026-03-07">
+            <div class="event-image-container">Poster: Power of Ten Quartet</div>
+            <div class="event-info">
+                <span class="event-date-display">Saturday, March 7th @ 7PM</span>
+                <h3 class="event-name">Power of Ten Quartet</h3>
+                <p class="event-details">$15 cover or a 2 drink minimum per person. Soulful jazz edge, reimagining timeless standards and modern pop.</p>
             </div>
-            <a href="#" class="details-btn">View Details</a>
         </div>
-    </div>
 
+        <div class="event-card" data-date="2026-03-12">
+            <div class="event-image-container">Poster: Dave Hagedorn</div>
+            <div class="event-info">
+                <span class="event-date-display">Thursday, March 12th @ 7PM</span>
+                <h3 class="event-name">Dave Hagedorn with Jay Epstein and Gary Raynor</h3>
+                <p class="event-details">$10 cover or a 2 drink minimum per person</p>
+            </div>
+        </div>
+
+        <div class="event-card" data-date="2026-03-13">
+            <div class="event-image-container">Poster: Quarteto Carioca</div>
+            <div class="event-info">
+                <span class="event-date-display">Friday, March 13th @ 7PM</span>
+                <h3 class="event-name">Quarteto Carioca</h3>
+                <p class="event-details">Swingin' bossa nova, samba jazz, and MPB. Live band 7-9 PM, followed by a DJ and dancing!</p>
+                <a href="https://www.eventbrite.com/e/quarteto-carioca-live-at-the-high-hat-tickets-1984516990741" class="details-btn">Tickets / Details</a>
+            </div>
+        </div>
+
+        <div class="event-card" data-date="2026-03-14">
+            <div class="event-image-container">Poster: Sean "Smitty" Smith</div>
+            <div class="event-info">
+                <span class="event-date-display">Saturday, March 14th @ 7PM</span>
+                <h3 class="event-name">Sean "Smitty" Smith and SP4</h3>
+                <p class="event-details">A night of funk, soul, and R&B. $17 at the door or pre-order online.</p>
+                <a href="https://www.eventbrite.com/e/sean-smitty-smith-and-sp4-tickets-1984573045402" class="details-btn">Tickets / Details</a>
+            </div>
+        </div>
+
+    </div>
 </main>
 
-<footer>
-    <div class="footer-content">
-        <div><h3>Location</h3><p>Address Placeholder</p></div>
-        <div><h3>Hours</h3><p>Schedule Placeholder</p></div>
-        <div><h3>Contact</h3><p>Phone/Email Placeholder</p></div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 The High Hat. All Rights Reserved. | Site by [Your Name]</p>
-    </div>
-</footer>
+<script>
+    function organizeEvents() {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const masterList = document.getElementById('master-event-list');
+        const events = masterList.getElementsByClassName('event-card');
+        const upcomingGrid = document.getElementById('upcoming-grid');
+        const previousGrid = document.getElementById('previous-grid');
 
+        Array.from(events).forEach(event => {
+            const eventDate = new Date(event.getAttribute('data-date'));
+            if (eventDate >= today) {
+                upcomingGrid.appendChild(event.cloneNode(true));
+            } else {
+                const pastEvent = event.cloneNode(true);
+                pastEvent.classList.add('past-event');
+                previousGrid.appendChild(pastEvent);
+            }
+        });
+    }
+    function togglePastEvents() {
+        const wrapper = document.getElementById('previous-events-wrapper');
+        const btn = document.querySelector('.toggle-btn');
+        if (wrapper.style.display === 'block') {
+            wrapper.style.display = 'none';
+            btn.innerText = 'View Previous Events';
+        } else {
+            wrapper.style.display = 'block';
+            btn.innerText = 'Hide Previous Events';
+        }
+    }
+    window.onload = organizeEvents;
+</script>
+
+<footer style="background: #1a1a1a; color: white; padding: 40px 5%; text-align: center; margin-top: 50px;">
+    <p>&copy; 2024 The High Hat. All Rights Reserved.</p>
+</footer>
 </body>
 </html>
