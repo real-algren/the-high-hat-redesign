@@ -7,6 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Header / Nav Adjustments */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: white;
+            border-bottom: 1px solid #eee;
+        }
+        .logo-container { flex: 1; }
+        .logo-img { height: 60px; width: auto; display: block; }
+        .nav-links { flex: 2; display: flex; justify-content: center; gap: 30px; list-style: none; }
+        .nav-socials { flex: 1; display: flex; justify-content: flex-end; }
+
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
